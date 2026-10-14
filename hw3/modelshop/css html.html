@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        font-family: Arial;
+        background: #f8f8f8;
+        padding: 30px;
+      }
+
+      textarea,
+      input {
+        width: 400px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid gray;
+      }
+
+      .dem {
+        color: red;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Textarea</h3>
+    <textarea id="o1" maxlength="140"></textarea>
+    <p class="dem" id="dem1">Max 0 / 140</p>
+    <br />
+    <br />
+
+    <h3>Input Field</h3>
+    <input id="o2" type="text" maxlength="20" />
+    <p class="dem" id="dem2">Maximum 0 / 20</p>
+
+    <script>
+      document.getElementById("o1").oninput = function () {
+        var so = document.getElementById("o1").value.length;
+        document.getElementById("dem1").innerHTML = "Max " + so + " / 140";
+      };
+
+      document.getElementById("o2").oninput = function () {
+        var so2 = document.getElementById("o2").value.length;
+        document.getElementById("dem2").innerHTML = "Maximum " + so2 + " / 20";
+      };
+    </script>
+  </body>
+</html>
